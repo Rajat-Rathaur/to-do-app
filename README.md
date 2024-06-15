@@ -1,3 +1,5 @@
+Do not use vercel link as the backend is not hosted yet so the vercel link will not work 
+
 Clone this repositary 
 and switch directory to 
 backend and frontend
