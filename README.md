@@ -1,4 +1,4 @@
-Do not use vercel link as the backend is not hosted yet so the vercel link will not work 
+Vercel Link is live and functional you can use that as well 
 
 Clone this repositary 
 and switch directory to 
