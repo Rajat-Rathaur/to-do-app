@@ -7,7 +7,7 @@ backend and frontend
 then do npm start on frontend 
 and do node index.js on backend 
 
-
+You can change databse and attach yours also by changing .env file in backend 
 
 although signin and signup are working But in case signup doesn't work use below credentails for signin
 
