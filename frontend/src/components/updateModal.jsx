@@ -7,7 +7,7 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
         startDate: '',
         endDate: '',
         description: '',
-        isCompleted: false,
+        isCompleted: '',
       });
     
       useEffect(() => {
@@ -17,7 +17,7 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
             startDate: itineraryToEdit.startDate,
             endDate: itineraryToEdit.endDate,
             description: itineraryToEdit.description,
-            isCompleted: itineraryToEdit.isCompleted,
+            completed: itineraryToEdit.isCompleted,
           });
         }
       }, [itineraryToEdit]);
@@ -26,10 +26,11 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
         const { name, value } = e.target;
         setItineraryData((prevState) => ({
           ...prevState,
-          [name]: value,
+          [name]: value === 'YES' ? true : value === 'NO' ? false : value,
         }));
       };
-    
+      
+      
       const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -123,18 +124,21 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
       />
     </div>
     <div className="mb-4">
-      <label htmlFor="isCompleted" className="flex items-center">
-        <input
-          type="checkbox"
-          id="isCompleted"
-          name="isCompleted"
-          checked={itineraryData.isCompleted}
-          onChange={(e) => handleChange({ target: { name: 'isCompleted', value: e.target.checked } })}
-          className="mr-2"
-        />
-        Mark as completed
-      </label>
-    </div>
+  <label htmlFor="isCompleted" className="block mb-2">
+    Completion Status
+  </label>
+  <select
+    id="isCompleted"
+    name="isCompleted"
+    value={itineraryData.isCompleted ? 'YES' : 'NO'}
+    onChange={handleChange}
+    className="border border-gray-300 rounded px-2 py-1"
+  >
+    <option value="NO">NO</option>
+    <option value="YES">YES</option>
+  </select>
+</div>
+
           <div className="flex justify-end">
             <button
               type="button"
