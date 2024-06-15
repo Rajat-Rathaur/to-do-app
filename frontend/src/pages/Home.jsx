@@ -100,7 +100,7 @@ const Home = () => {
               </p>
               <p>
                 <span className="font-semibold">Completed:</span>{' '}
-                {itinerary.completed ? 'Yes' : 'No'}
+                {itinerary.completed }
               </p>
             </div>
           </div>

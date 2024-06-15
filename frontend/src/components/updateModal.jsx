@@ -7,7 +7,7 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
         startDate: '',
         endDate: '',
         description: '',
-        isCompleted: '',
+        completed: '',
       });
     
       useEffect(() => {
@@ -17,7 +17,7 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
             startDate: itineraryToEdit.startDate,
             endDate: itineraryToEdit.endDate,
             description: itineraryToEdit.description,
-            completed: itineraryToEdit.isCompleted,
+            completed: itineraryToEdit.completed,
           });
         }
       }, [itineraryToEdit]);
@@ -26,7 +26,7 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
         const { name, value } = e.target;
         setItineraryData((prevState) => ({
           ...prevState,
-          [name]: value === 'YES' ? true : value === 'NO' ? false : value,
+          [name]: value,
         }));
       };
       
@@ -124,20 +124,17 @@ const EditTaskModal = ({ isOpen, onClose, itineraryToEdit }) => {
       />
     </div>
     <div className="mb-4">
-  <label htmlFor="isCompleted" className="block mb-2">
-    Completion Status
-  </label>
-  <select
-    id="isCompleted"
-    name="isCompleted"
-    value={itineraryData.isCompleted ? 'YES' : 'NO'}
-    onChange={handleChange}
-    className="border border-gray-300 rounded px-2 py-1"
-  >
-    <option value="NO">NO</option>
-    <option value="YES">YES</option>
-  </select>
-</div>
+      <label htmlFor="completed" className="block font-medium mb-2">
+        Is your task completed?
+      </label>
+      <textarea
+        id="completed"
+        name="completed"
+        value={itineraryData.completed}
+        onChange={handleChange}
+        className="border border-gray-300 rounded-md px-3 py-2 w-full"
+      />
+    </div>
 
           <div className="flex justify-end">
             <button

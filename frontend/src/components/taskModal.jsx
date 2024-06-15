@@ -9,7 +9,7 @@ const AddTaskModal = ({ isOpen, onClose }) => {
         startDate: '',
         endDate: '',
         description: '',
-        isCompleted: false,
+        completed: '',
       });
     
       const handleChange = (e) => {
@@ -49,7 +49,7 @@ const AddTaskModal = ({ isOpen, onClose }) => {
               startDate: '',
               endDate: '',
               description: '',
-              isCompleted: false,
+              completed: '',
             });
             onClose();
             window.location.reload(); // Close the modal after submission
@@ -124,17 +124,16 @@ const AddTaskModal = ({ isOpen, onClose }) => {
       />
     </div>
     <div className="mb-4">
-      <label htmlFor="isCompleted" className="flex items-center">
-        <input
-          type="checkbox"
-          id="isCompleted"
-          name="isCompleted"
-          checked={taskData.isCompleted}
-          onChange={(e) => handleChange({ target: { name: 'isCompleted', value: e.target.checked } })}
-          className="mr-2"
-        />
-        Mark as completed
+      <label htmlFor="completed" className="block font-medium mb-2">
+        Is your task completed?
       </label>
+      <textarea
+        id="completed"
+        name="completed"
+        value={taskData.completed}
+        onChange={handleChange}
+        className="border border-gray-300 rounded-md px-3 py-2 w-full"
+      />
     </div>
     <div className="flex justify-end">
       <button

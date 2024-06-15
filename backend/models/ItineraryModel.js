@@ -8,7 +8,7 @@ const itinerarySchema = new Schema({
     endDate: { type: Date, required: true },
 
     description: { type: String, required: true },
-    completed: { type: Boolean, default: false },
+    completed: { type: String, required: true },
 
 });
 
