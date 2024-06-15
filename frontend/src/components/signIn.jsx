@@ -42,7 +42,7 @@ export default function Login() {
         setTimeout(() => {
           navigate('/home');
         }, 1000);
-        window.location.reload();
+        
       } else {
         const errorData = await response.json();
         console.error('Login failed:', errorData.message);
