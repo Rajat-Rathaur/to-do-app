@@ -2,6 +2,11 @@ Vercel Link is live and functional you can use that as well
 
 https://my-trip-mates-itinerary-planner.vercel.app/
 
+If you don't want to sign up use below credentials for signin
+
+Email:- rajat@gmail.com
+
+Password:- 123456
 
 Clone this repositary 
 and switch directory to 
