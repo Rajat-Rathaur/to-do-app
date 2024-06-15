@@ -1,4 +1,4 @@
-Vercel Link is live and functional you can use that as well 
+Vercel Link is live and it is functional only when the backend folder is running on your localhost 
 
 https://my-trip-mates-itinerary-planner.vercel.app/
 
