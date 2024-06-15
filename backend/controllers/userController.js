@@ -14,24 +14,32 @@ const signup = async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
-        const existingUser = await User.findOne({ email: email });
+        // Check if the user already exists
+        const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: "User already exists" });
         }
 
+        // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const newUser = await User.create({
-            email: email,
+        // Create a new user
+        const newUser = new User({
+            name,
+            email,
             password: hashedPassword,
-            name: name,
         });
 
+        // Save the new user to the database
+        await newUser.save();
+
+        // Generate a JWT token
         const token = jwt.sign({ email: newUser.email, id: newUser._id }, process.env.SECRET);
 
+        // Set the JWT token as a cookie
         res.cookie("jwt", token, {
             httpOnly: true,
-            maxAge: 24 * 60 * 60 * 1000,
+            maxAge: 24 * 60 * 60 * 1000, // 1 day
         });
 
         res.status(201).json({ message: "Sign Up successful" });
@@ -40,7 +48,6 @@ const signup = async (req, res) => {
         res.status(500).json({ message: "Something went wrong" });
     }
 };
-
 
 
 // Assuming SECRET_KEY is defined somewhere in your code as it's used for jwt.sign
