@@ -41,7 +41,7 @@ export default function Login() {
         setFlashMessage('Login successful!');
         setTimeout(() => {
           navigate('/home');
-        }, 2000);
+        }, 1000);
       } else {
         const errorData = await response.json();
         console.error('Login failed:', errorData.message);
