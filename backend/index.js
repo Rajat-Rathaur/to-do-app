@@ -11,7 +11,7 @@ const userRouter = require('../backend/routes/userRoutes');
 const cors = require('cors');
 app.use(express.json());
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://my-trip-mates-itinerary-planner.vercel.app'],
+  origin: ['http://localhost:3000', 'https://to-do-app-one-iota.vercel.app'],
   credentials: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Specify the allowed HTTP methods
   allowedHeaders: 'Content-Type,Authorization', // Specify the allowed headers
