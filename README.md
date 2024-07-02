@@ -1,6 +1,7 @@
 Vercel Link is live and it is functional only when the backend folder is running on your localhost 
 
-https://my-trip-mates-itinerary-planner.vercel.app/
+https://to-do-app-one-iota.vercel.app/
+
 
 If you don't want to sign up use below credentials for signin
 
