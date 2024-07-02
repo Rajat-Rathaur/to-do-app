@@ -70,7 +70,7 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://static.wixstatic.com/media/e25479_037a26748e2445cda4e24f9d9c5bfde0~mv2.jpg/v1/crop/x_449,y_354,w_832,h_522/fill/w_174,h_109,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e25479_037a26748e2445cda4e24f9d9c5bfde0~mv2.jpg"
+                    src="https://www.credenceanalytics.com/static/0dad30fc235b92dbea9cd7321c264a98/f3edb/Credence-Analytics.webp"
                     alt="Your Company"
                   />
                 </div>
@@ -98,7 +98,7 @@ export default function Navbar() {
                   </div>
                 </div>
                 <div className="mx-auto">
-              <span className="text-white text-xl font-bold">Itinerary Planner</span>
+              <span className="text-white text-xl font-bold">To Do App </span>
             </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
