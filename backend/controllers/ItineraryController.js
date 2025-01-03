@@ -4,11 +4,9 @@ const ObjectId = require('mongoose').Types.ObjectId;
 // Create a new itinerary
 exports.createItinerary = async (req, res) => {
     try {
-    
-    
+       
         
       const {user, title, startDate, endDate, description, completed } = req.body;
-
   
       const newItinerary = new Itinerary({
         user,

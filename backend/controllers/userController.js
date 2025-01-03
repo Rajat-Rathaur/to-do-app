@@ -55,54 +55,25 @@ const signup = async (req, res) => {
 
 
 const signin = async (req, res) => {
-
     const { email, password } = req.body;
-
-
-
     try {
-
         const existingUser = await User.findOne({ email: email });
-
         if (!existingUser) {
-
             return res.status(404).json({ message: "User not found" });
-
         }
-
-
-
         const matchPassword = await bcrypt.compare(password, existingUser.password);
-
-
-
         if (!matchPassword) {
-
-            return res.status(400).json({ message: "Invalid Email or Password" });
-
+           return res.status(400).json({ message: "Invalid Email or Password" });
         }
-
-
-
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, SECRET, { expiresIn: "1h" });
 
-
-
         // You might want to limit the user information sent back to the client for security reasons
-
         const userToSend = {
             name : existingUser.name,
-
             email: existingUser.email,
-
             id: existingUser._id,
-
             // Add any other user fields you want to send back
-
         };
-
-
-
         res.cookie("jwt", token, {
 
             httpOnly: true,

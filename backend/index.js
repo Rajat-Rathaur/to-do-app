@@ -38,12 +38,6 @@ app.use(session({
 }));
 
 
-
-
-
-
-
-
 app.get('/auth/protected',isLoggedIn,(req,res)=>{
   let name = req.user.displayName;
   res.send("Hello ${name}");
